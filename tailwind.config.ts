@@ -16,8 +16,22 @@ const config: Config = {
       colors: {
         noti: "#F35C7A",
       },
+      keyframes: {
+        slideRightToLeft: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        slideLeftToRight: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        "slide-right-to-left": "slideRightToLeft 0.3s ease-in-out",
+        "slide-left-to-right": "slideLeftToRight 0.5s ease-in-out",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
 export default config;
